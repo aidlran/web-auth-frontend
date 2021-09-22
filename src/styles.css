@@ -1,35 +1,102 @@
 body {
 	margin: 0;
-	min-height: 100vh;
-	display: flex;
-	background-color: #eee;
+	display: grid;
 }
 
-form {
-	margin: auto;
-	display: flex;
-	flex-flow: column;
-	align-items: flex-end;
-	gap: 20px;
-	padding: 20px;
-	border-radius: 10px;
-	background-color: #fff;
-	box-shadow: 0 1px 6px #0004;
+section {
+	padding: 50px;
 }
 
-/* Hidden label */
+h1 {
+	font-size: 20pt;
+	color: #040404;
+}
+
+h1, p, form {
+	margin: 40px 0;
+}
+
+#welcome h1{
+	font-size: 34pt;
+}
+
+#login-container,
+#create {
+	background-color: #f5f5f5;
+	box-shadow: 0 0 6px #0003;
+}
+
+#login p,
+#create p {
+	text-align: center;
+}
+
+p.error {
+	color: indianred;
+}
+
 label span {
 	display: block;
-	width: 1px;
-	height: 1px;
-	clip: rect(0 0 0 0);
-	margin: -1px;
-	padding: 0;
-	border: 0;
-	overflow: hidden;
+	text-align: left;
+	font-size: 10pt;
+	color: #999;
 }
 
-input {
-	padding: 4px;
-	font-size: 1.1em;
+input:focus {
+	outline: 0;
+}
+
+input:not([type=submit]) {
+	width: 100%;
+	padding: 12px 0 7px;
+	margin-bottom: 25px;
+	border: 0;
+	border-bottom: 2px solid #777;
+	background: none;
+	font-size: 14pt;
+}
+input:not([type=submit]):not(.error):focus {
+	border-bottom-color: dodgerblue;
+}
+
+input.error {
+	border-bottom-color: indianred;
+}
+
+.button {
+	border: 0;
+	border-radius: 10px;
+	padding: 12px 14px;
+	color: #f0f0f0;
+	background-color: #1a59e0;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 13pt;
+	font-weight: bold;
+	transition: 0.3s ease-out background-color;
+}
+
+.button:hover {
+	background-color: #2e7de7;
+}
+
+@media screen and (min-width: 740px) {
+	body {
+		grid-template: 100vh / auto max-content;
+		background-image: url('bg.jpg');
+		background-position: center top;
+		background-size: cover;
+	}
+	section {
+		margin: auto;
+	}
+	#welcome {
+		grid-area: 1 / 1;
+		max-width: 400px;
+		padding-right: 25%;
+	}
+	#login-container {
+		grid-area: 1 / 2;
+		display: flex;
+	}
 }

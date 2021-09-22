@@ -1,5 +1,8 @@
 let error = readCookie('X-Form-Error');
-if (error) document.forms.item(0).append(Object.assign(document.createElement('span'), {innerText: decodeURI(error)}));
+if (error) document.forms.item(0).append((errorMsg => {
+	errorMsg.classList.add('error');
+	return errorMsg;
+})(Object.assign(document.createElement('p'), {innerText: decodeURI(error)})));
 
 function readCookie(name) {
 	name = name + "=";

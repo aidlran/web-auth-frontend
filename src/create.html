@@ -7,21 +7,25 @@
 	<script src="app.js" defer></script>
 	<title>Create an account</title>
 </head>
-<body>
-<form method="POST">
-	<label>
-		<span>Username</span>
-		<input name="user" type="text" placeholder="Username" required>
-	</label>
-	<label>
-		<span>Password</span>
-		<input name="pass" type="password" placeholder="Password" required>
-	</label>
-	<label>
-		<span>Confirm Password</span>
-		<input name="pass" type="password" placeholder="Confirm password" required>
-	</label>
-	<input type="submit" value="Create">
-</form>
+<body class="create">
+	<section id="create">
+		<h1>Create an account</h1>
+		<form name="create" method="POST">
+			<label>
+				<span>Username</span>
+				<input name="user" type="text" required>
+			</label>
+			<label>
+				<span>Password</span>
+				<input name="pass" type="password" required>
+			</label>
+			<label>
+				<span>Confirm password</span>
+				<input name="confirm-pass" type="password" required>
+			</label>
+			<input class="button" type="submit" value="Create account">
+		</form>
+		<p>Already have an account? Log in <a href="login">here</a>.</p>
+	</section>
 </body>
 </html>
