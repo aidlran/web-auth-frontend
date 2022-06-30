@@ -1,7 +1,7 @@
 {
-  "name": "login-site",
+  "name": "web-auth-frontend",
   "version": "1.0.0",
   "private": true,
   "author": "Aidan Loughran",
-  "repository": "github:Defunk-t/login-site"
+  "repository": "github:aidlran/web-auth-frontend"
 }
